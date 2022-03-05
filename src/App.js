@@ -54,11 +54,6 @@ function App() {
   }
   return (
     <div className="App">
-<<<<<<< HEAD
-      <CreateTest> </CreateTest>
-      <Tests student="seif"/>
-      <button>create test</button>
-=======
       <Router>
         <User/>
         {OpenCreateTest && <CreateTasks Tests={Tests} setTests={setTests}/>}
@@ -67,7 +62,6 @@ function App() {
 
       </Router>
       
->>>>>>> c0b5cb39890b73ae5bdb97dedc1344693995236e
     </div>
   );
 }
