@@ -23,8 +23,8 @@ function CreateTest({ createTest }) {
         setTest(nTests)
     }
     const submitTest = (name) => {
-        if (Test.length < 5) {
-            alert("Test must have more then 5 question")
+        if (Test.length < 2) {
+            alert("Test must have more then 2 question")
             return;
         }
         var test = {};
