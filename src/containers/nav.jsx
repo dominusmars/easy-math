@@ -9,9 +9,9 @@ function Navbar({gotoPage}) {
 
 
   return (
-    <div className="navigation">
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <div className="container">
+    <div className="navigation"  style = {{display: "flex",}}>
+      <nav className="navbar navbar-expand navbar-dark bg-dark"  style={{ display: "inline" }}>
+        <div className="container" style = {{display: "inline"}}>
         
           <div>
             <ul className="navbar-nav ml-auto">
@@ -51,3 +51,5 @@ function Navbar({gotoPage}) {
 }
 
 export default Navbar;
+
+// 

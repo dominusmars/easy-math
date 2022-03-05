@@ -40,7 +40,7 @@ window.data = {
 function App() {
   const [Tests, setTests] = useState([]);
   const [OpenCreateTest, setOpenCreateTest] = useState(false);
-  const [OpenHomePage, setOpenHomePage] = useState(false);
+  const [OpenHomePage, setOpenHomePage] = useState(true);
   const [OpenTests, setOpenTests]= useState(false)
   const gotoPage = (name)=>{
     switch (name) {
@@ -66,12 +66,13 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Navbar gotoPage={gotoPage} />
+
         <User/>
 
         {OpenHomePage &&  <Welcome />}
         {OpenCreateTest && <CreateTasks Tests={Tests} setTests={setTests}/>}
         
-        <Navbar gotoPage={gotoPage} />
 
       </Router>
       

@@ -37,7 +37,7 @@ function CreateTest({ Tests, setTests }) {
     }
 
     return (
-        <div>
+        <div >
             <form onSubmit={(e) => {
                 e.preventDefault()
                 var question = document.getElementById('questionInput').value
@@ -63,13 +63,13 @@ function CreateTest({ Tests, setTests }) {
                 document.getElementById("formulaInput").value = '';
                 document.getElementById("answerInput").value = '';
 
-            }}>
+            }} style={{ padding: "1.5mm" }} >
 
-                <label htmlFor="questionInput">Question: </label>
+                <label htmlFor="questionInput" style={{ padding: "1.5mm" }}>Question: </label>
                 <input type="text" className="questionInput" id="questionInput" required />
-                <label htmlFor="formulaInput">Formula: </label>
+                <label htmlFor="formulaInput" style={{ padding: "1.5mm" }}>Formula: </label>
                 <input type="text" className="formulaInput" id="formulaInput" required />
-                <label htmlFor="answerInput">Answer: </label>
+                <label htmlFor="answerInput" style={{ padding: "1.5mm" }}>Answer: </label>
                 <input type="text" className="answerInput" id="answerInput" required />
                 <input type="submit" />
             </form>
@@ -78,8 +78,8 @@ function CreateTest({ Tests, setTests }) {
                 var name = document.getElementById('nameInput').value
                 submitTest(name)
                 document.getElementById('nameInput').value = '';
-            }}>
-                <label htmlFor="nameInput">Name of Test: </label>
+            }} style={{ padding: "1.5mm", margin: "1.5mm" }}>
+                <label htmlFor="nameInput" >Name of Test: </label>
                 <input type="text" className="nameInput" id="nameInput" required />
                 <input type="submit" value="Submit Test" />
                 {
