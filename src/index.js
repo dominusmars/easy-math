@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+export { default as Navigation } from "./nav";
+export { default as Footer } from "./footer";
+export { default as Home } from "./home";
+
 
 ReactDOM.render(
   <React.StrictMode>
