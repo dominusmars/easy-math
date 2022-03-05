@@ -4,17 +4,17 @@ import '../App.css';
 
 
 function Tests(props) {
-    const [tests, settests] = useState([]);
+    const [tests, settests] = useState(window.data.tests);
 
     useEffect(() => {
-        settests(getTests())
-    }, [tests, props.student])
+        settests(window.data.tests)
+    } , [window.data.tests, settests])
 
     return (
         <div className="Tests">
             <h1>{props.student}</h1>
             <div>
-                {tests.map((test) => <Test name={test.testName}></Test>)}
+                {tests.map((test, id) => <Test name={test.testName} key={id}></Test>)}
             </div>
         </div>
     )

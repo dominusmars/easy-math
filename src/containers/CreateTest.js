@@ -28,7 +28,7 @@ function CreateTest({ createTest }) {
             return;
         }
         var test = {};
-        test.taskName = name
+        test.testName = name
         test.test = Test
         window.data.tests.push(test)
         console.log(window.data)
