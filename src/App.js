@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-export { default as Navigation } from "./nav";
-export { default as Footer } from "./footer";
-export { default as Home } from "./home";
+import Nav from "./containers/nav.jsx";
+import Footer from "./containers/footer.jsx";
+import Home from "./containers/home.jsx";
 
 
 window.data = {
@@ -31,10 +31,16 @@ window.data = {
 
 
 function App() {
-
   return (
     <div className="App">
-      <button>create test</button>
+
+      <Nav />
+
+      <Home />
+
+      <Footer />
+
+      <button> create test </button>
     </div>
   );
 }
