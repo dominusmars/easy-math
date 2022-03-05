@@ -17,15 +17,20 @@ window.data = {
           ]
       }
   ],
-  "tests":{
-      "HASHKEY": [
-          {
-              "question":"",
-              "formula":"",
-              "answer":""
-          }
+  "tests":[
+    {
+      "testName": "name",
+      "test": [
+      {
+          "question":"",
+          "formula":"",
+          "answer":""
+      }
       ]
   }
+      
+
+  ]
 }
 
 
