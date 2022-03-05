@@ -9,6 +9,7 @@ function CreateTest({ createTest }) {
         nTest.splice(index, 1)
         setTest(nTest)
     }
+
     const addQuestion = (info) => {
         var nTests = [...Test];
         nTests.push({
@@ -21,9 +22,17 @@ function CreateTest({ createTest }) {
         console.log(nTests)
         setTest(nTests)
     }
-    const submitTest = () => {
-        console.log(Test)
-
+    const submitTest = (name) => {
+        if (Test.length < 5) {
+            alert("Test must have more then 5 question")
+            return;
+        }
+        var test = {};
+        test.taskName = name
+        test.test = Test
+        window.data.tests.push(test)
+        console.log(window.data)
+        setTest([])
     }
     return (
         <div>
@@ -41,7 +50,6 @@ function CreateTest({ createTest }) {
                 var matchRegex = /\w+=/gm
                 var newQuestion = question.replace(matchRegex, "")
 
-                console.log(question)
                 addQuestion({
                     qO: oQuestion,
                     q: newQuestion,
@@ -51,33 +59,44 @@ function CreateTest({ createTest }) {
                 })
                 document.getElementById('questionInput').value = '';
                 document.getElementById("formulaInput").value = '';
-                document.getElementById("answerInput").value = ''
+                document.getElementById("answerInput").value = '';
 
             }}>
-                <label htmlFor="question">Question: </label>
-                <input type="text" className="question" id="questionInput" required />
-                <label htmlFor="answer">Formula: </label>
-                <input type="text" className="answer" id="formulaInput" required />
-                <label htmlFor="answer">Answer: </label>
-                <input type="text" className="answer" id="answerInput" required />
+
+                <label htmlFor="questionInput">Question: </label>
+                <input type="text" className="questionInput" id="questionInput" required />
+                <label htmlFor="formulaInput">Formula: </label>
+                <input type="text" className="formulaInput" id="formulaInput" required />
+                <label htmlFor="answerInput">Answer: </label>
+                <input type="text" className="answerInput" id="answerInput" required />
                 <input type="submit" />
             </form>
-            {
-                Test.map((question, index) => {
-                    return (
-                        <div key={index}>
-                            <h6>{question.question}</h6>
-                            <p>{question.anwser}</p>
-                            <button onClick={(e) => {
-                                deleteQuestion(index)
-                            }}>Delete</button>
-                        </div>
-                    )
-                })
-            }
-            <button onClick={() => {
-                submitTest()
-            }}>Submit Test</button>
+            <form onSubmit={(e) => {
+                e.preventDefault()
+                var name = document.getElementById('nameInput').value
+                submitTest(name)
+                document.getElementById('nameInput').value = '';
+            }}>
+                <label htmlFor="nameInput">Name of Test: </label>
+                <input type="text" className="nameInput" id="nameInput" required />
+                <input type="submit" value="Submit Test" />
+                {
+                    Test.map((question, index) => {
+                        return (
+                            <div key={index}>
+                                <h6>{question.question}</h6>
+                                <p>{question.anwser}</p>
+                                <button onClick={(e) => {
+                                    deleteQuestion(index)
+                                }}>Delete</button>
+                            </div>
+                        )
+                    })
+                }
+
+
+            </form>
+
 
         </div >
     )
