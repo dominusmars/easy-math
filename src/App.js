@@ -1,23 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
 
+window.data = {
+  "users":[
+      {
+          "username": "LAMBALPHA",
+          "profilepicture": "https://cdn.discordapp.com/avatars/213789214951604224/a_d19096f911b63a9009c12c2ac26739b0",
+          "type":"admin",
+          "testing":[
+              {
+                  "test":"",
+                  "score":""
+              }
+          ]
+      }
+  ],
+  "tests":{
+      "HASHKEY": [
+          {
+              "question":"",
+              "answer":""
+          }
+      ]
+  }
+}
+
+
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button>create test</button>
     </div>
   );
 }

@@ -1,0 +1,23 @@
+{
+    "users":[
+        {
+            "username": "",
+            "profilepicture": "",
+            "type":"",
+            "testing":[
+                {
+                    "test":"",
+                    "score":""
+                }
+            ]
+        }
+    ],
+    "tests":{
+        "HASHKEY": [
+            {
+                "question":"",
+                "answer":""
+            }
+        ]
+    }
+}
