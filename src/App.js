@@ -1,5 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+export { default as Navigation } from "./nav";
+export { default as Footer } from "./footer";
+export { default as Home } from "./home";
+
 
 window.data = {
   "users":[
