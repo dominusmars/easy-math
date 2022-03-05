@@ -39,10 +39,8 @@ window.data = {
 function App() {
   return (
     <div className="App">
-      <button> create test </button>
 
       <CreateTasks />
-      <button>create test</button>
     
     </div>
   );
