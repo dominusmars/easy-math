@@ -5,6 +5,18 @@
   padding: 30px;
 }
 
+.Home {
+  text-align: center;
+}
+
+.footer {
+  background: white;
+}
+
+.navbar {
+  display: block;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

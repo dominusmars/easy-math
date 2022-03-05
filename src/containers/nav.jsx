@@ -1,38 +1,38 @@
-// import React from "react";
 import { NavLink } from "react-router-dom";
 import React, { useState } from 'react';
 
 
+// <img src={img} alt="" style={{ width: "200px", borderRadius: "15%" }} />
 
-
-function Navbar() {
+function Navbar({gotoPage}) {
 
 
   return (
-    <div className="navigation">
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <div className="container">
-          <NavLink className="navbar-brand" to="/">
-            React Multi-Page Website
-          </NavLink>
+    <div className="navigation" style = {{display: "flex",}} >
+      <nav className="navbar navbar-expand navbar-dark bg-dark"
+        style={{ display: "inline" }}>
+        <div className="container" style = {{display: "inline"}}>
           <div>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">
+              <button onClick={()=>{
+                    gotoPage("Home")
+                }}>
+                  Home
+                </button>
+                {/* <NavLink className="nav-link" extract to="/">
                   Home
                   <span className="sr-only">(current)</span>
-                </NavLink>
+                </NavLink> */}
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="">
+                <button onClick={()=>{
+                    gotoPage("createTest")
+                }}>
                   MakeTest
-                </NavLink>
+                </button>                
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="">
-                  Tests
-                </NavLink>
-              </li>
+
             </ul>
           </div>
         </div>
@@ -43,3 +43,100 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
+
+
+
+
+
+
+
+// import React from "react";
+// import {  NavLink } from "react-router-dom";
+// // import React, { useState } from 'react';
+
+
+
+
+// function Navbar() {
+
+
+// // <img src={img} alt="" style={{ width: "200px", borderRadius: "15%" }} />
+
+//   return (
+//     <div className="navigation" >
+//       <nav className="navbar navbar-expand navbar-dark bg-dark">
+//         <div className="container" style={{ display: "flex", overflow: "hidden"}}>
+//           <NavLink className="navbar-brand" extract to="/">
+//             React Multi-Page Website
+//           </NavLink>
+//           <div>
+//             <ul className="navbar-nav ml-auto">
+//               <li className="nav-item">
+//                 <NavLink className="nav-link" extract to="/containers/home.jsx">
+//                   Home
+//                   <span className="sr-only">(current)</span>
+//                 </NavLink>
+//               </li>
+//               <li className="nav-item">
+//                 <NavLink className="nav-link" extract to="/">
+//                   MakeTest
+//                 </NavLink>
+//               </li>
+//               <li className="nav-item">
+//                 <NavLink className="nav-link" extract to="/">
+//                   Tests
+//                 </NavLink>
+//               </li>
+//             </ul>
+//           </div>
+//         </div>
+//       </nav>
+//     </div>
+//   );
+
+// }
+
+// export default Navbar;
+
+// // function Navbar() {
+
+
+
+
+// //   // return (
+// //   //   <div className="navigation">
+// //   //     <nav className="navbar navbar-expand navbar-dark bg-dark">
+// //   //       <div className="container">
+// //   //         <NavLink className="navbar-brand" to="/">
+// //   //           React Multi-Page Website
+// //   //         </NavLink>
+// //   //         <div>
+// //   //           <ul className="navbar-nav ml-auto">
+// //   //             <li className="nav-item">
+// //   //               <NavLink className="nav-link" to="/">
+// //   //                 Home
+// //   //                 <span className="sr-only">(current)</span>
+// //   //               </NavLink>
+// //   //             </li>
+// //   //             <li className="nav-item">
+// //   //               <NavLink className="nav-link" to="">
+// //   //                 MakeTest
+// //   //               </NavLink>
+// //   //             </li>
+// //   //             <li className="nav-item">
+// //   //               <NavLink className="nav-link" to="">
+// //   //                 Tests
+// //   //               </NavLink>
+// //   //             </li>
+// //   //           </ul>
+// //   //         </div>
+// //   //       </div>
+// //   //     </nav>
+// //   //   </div>
+// //   // );
+
+// // }
+
+// // export default Navbar;
