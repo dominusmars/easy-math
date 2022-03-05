@@ -77,7 +77,9 @@ function CreateTest({ createTest }) {
                 submitTest(name)
                 document.getElementById('nameInput').value = '';
             }}>
-
+                <label htmlFor="nameInput">Name of Test: </label>
+                <input type="text" className="nameInput" id="nameInput" required />
+                <input type="submit" value="Submit Test" />
                 {
                     Test.map((question, index) => {
                         return (
@@ -91,9 +93,7 @@ function CreateTest({ createTest }) {
                         )
                     })
                 }
-                <label htmlFor="nameInput">Name of Test: </label>
-                <input type="text" className="nameInput" id="nameInput" required />
-                <input type="submit" value="Submit Test" />
+
 
             </form>
 
