@@ -66,8 +66,9 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {OpenHomePage &&  <Welcome />}
         <User/>
+
+        {OpenHomePage &&  <Welcome />}
         {OpenCreateTest && <CreateTasks Tests={Tests} setTests={setTests}/>}
         
         <Navbar gotoPage={gotoPage} />

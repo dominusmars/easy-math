@@ -13,7 +13,8 @@ function User() {
     return (
         <div style={{ textAlign: "center", display: "flex", maxWidth: "200px" }}>
             <h4 style={{ textAlign: "center", display: "inline-block", margin: "auto", padding: "auto" }}>
-                Username: {name}
+                Username: <h5>{name}
+                </h5>
             </h4>
             <img src={profileURL} alt="" style={{ width: "100px", borderRadius: "100%", }} />
 

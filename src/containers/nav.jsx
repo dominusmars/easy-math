@@ -12,10 +12,7 @@ function Navbar({gotoPage}) {
     <div className="navigation">
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <div className="container">
-          
-          <NavLink className="navbar-brand" extract to="/">
-            React Multi-Page Website
-          </NavLink>
+        
           <div>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
@@ -38,9 +35,11 @@ function Navbar({gotoPage}) {
                 
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" extract to="/">
+              <button onClick={()=>{
+                    gotoPage("Tests")
+                }}>
                   Tests
-                </NavLink>
+                </button>
               </li>
             </ul>
           </div>
