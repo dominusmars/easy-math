@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react"
 
-function CreateTest({ createTest }) {
+function CreateTest({ Tests, setTests }) {
     const [Test, setTest] = useState([])
 
     const deleteQuestion = (index) => {
@@ -23,17 +23,19 @@ function CreateTest({ createTest }) {
         setTest(nTests)
     }
     const submitTest = (name) => {
-        if (Test.length < 5) {
-            alert("Test must have more then 5 question")
+        if (Test.length < 2) {
+            alert("Test must have more then 2 question")
             return;
         }
         var test = {};
         test.testName = name
         test.test = Test
-        window.data.tests.push(test)
-        console.log(window.data)
+        var ntests = [...Tests]
+        ntests.push(test)
+        setTests(ntests)
         setTest([])
     }
+
     return (
         <div>
             <form onSubmit={(e) => {

@@ -5,31 +5,35 @@ import React, { useState } from 'react';
 
 
 
-function Navbar() {
+function Navbar({gotoPage}) {
 
 
   return (
     <div className="navigation">
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <div className="container">
-          <NavLink className="navbar-brand" to="/">
+          
+          <NavLink className="navbar-brand" extract to="/">
             React Multi-Page Website
           </NavLink>
           <div>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">
+                <NavLink className="nav-link" extract to="/">
                   Home
                   <span className="sr-only">(current)</span>
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="">
+                <button onClick={()=>{
+                    gotoPage("createTest")
+                }}>
                   MakeTest
-                </NavLink>
+                </button>
+                
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="">
+                <NavLink className="nav-link" extract to="/">
                   Tests
                 </NavLink>
               </li>
