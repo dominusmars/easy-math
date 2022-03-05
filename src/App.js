@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import CreateTasks from "./containers/CreateTest"
 
 window.data = {
   "users":[
@@ -19,6 +20,7 @@ window.data = {
       "HASHKEY": [
           {
               "question":"",
+              "formula":"",
               "answer":""
           }
       ]
@@ -30,6 +32,7 @@ function App() {
 
   return (
     <div className="App">
+      <CreateTasks />
       <button>create test</button>
     </div>
   );
