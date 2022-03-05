@@ -14,18 +14,11 @@ function Tests(props) {
         <div className="Tests">
             <h1>{props.student}</h1>
             <div>
-                {tests.map((test) => <Test name={test}></Test>)}
-            </div>
-            <h3>Previous Tests</h3>
-
-            <div>
-                <Test></Test>
-                <Test></Test>
+                {tests.map((test) => <Test name={test.testName}></Test>)}
             </div>
         </div>
     )
 }
-
 
 function Test(props) {
     return (
@@ -34,7 +27,6 @@ function Test(props) {
         </button>
     )
 }
-
 
 function getTests() {
     return window.data.tests;
