@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import Nav from "./containers/nav.jsx";
-import Footer from "./containers/footer.jsx";
-import Home from "./containers/home.jsx";
+
+import CreateTasks from "./containers/CreateTest"
+
 
 
 window.data = {
@@ -23,6 +23,7 @@ window.data = {
       "HASHKEY": [
           {
               "question":"",
+              "formula":"",
               "answer":""
           }
       ]
@@ -33,14 +34,11 @@ window.data = {
 function App() {
   return (
     <div className="App">
-
-      <Nav />
-
-      <Home />
-
-      <Footer />
-
       <button> create test </button>
+
+      <CreateTasks />
+      <button>create test</button>
+    
     </div>
   );
 }
