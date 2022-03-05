@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-export { default as Navigation } from "./nav";
-export { default as Footer } from "./footer";
-export { default as Home } from "./home";
+export { default as Navigation } from "./containers/nav";
+export { default as Footer } from "./containers/footer";
+export { default as Home } from "./containers/home";
 
 
 ReactDOM.render(
