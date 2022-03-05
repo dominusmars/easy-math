@@ -19,10 +19,15 @@ function Navbar({gotoPage}) {
           <div>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink className="nav-link" extract to="/">
+              <button onClick={()=>{
+                    gotoPage("Home")
+                }}>
+                  Home
+                </button>
+                {/* <NavLink className="nav-link" extract to="/">
                   Home
                   <span className="sr-only">(current)</span>
-                </NavLink>
+                </NavLink> */}
               </li>
               <li className="nav-item">
                 <button onClick={()=>{

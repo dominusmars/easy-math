@@ -3,6 +3,7 @@ import './App.css';
 import { useState } from 'react';
 import CreateTasks from "./containers/CreateTest"
 import User from './containers/User';
+import Welcome from './containers/Welcome';
 import Navbar from "./containers/nav"
 import { MemoryRouter as Router} from 'react-router';
 
@@ -40,13 +41,24 @@ function App() {
   const [Tests, setTests] = useState([]);
   const [OpenCreateTest, setOpenCreateTest] = useState(false);
   const [OpenHomePage, setOpenHomePage] = useState(false);
-
+  const [OpenTests, setOpenTests]= useState(false)
   const gotoPage = (name)=>{
     switch (name) {
       case 'createTest':
         setOpenCreateTest(!OpenCreateTest);
+        setOpenHomePage(false);
+        setOpenTests(false)
         break;
-    
+      case "Home":
+        setOpenCreateTest(false);
+        setOpenHomePage(!OpenHomePage);
+        setOpenTests(false)
+        break;
+      case "Tests":
+        setOpenTests(!OpenTests)
+        setOpenCreateTest(false);
+        setOpenHomePage(false);
+        break;
       default:
         break;
     }
@@ -54,10 +66,11 @@ function App() {
   return (
     <div className="App">
       <Router>
+        {OpenHomePage &&  <Welcome />}
         <User/>
         {OpenCreateTest && <CreateTasks Tests={Tests} setTests={setTests}/>}
-        {OpenHomePage}
-        <Navbar gotoPage={gotoPage}/>
+        
+        <Navbar gotoPage={gotoPage} />
 
       </Router>
       
