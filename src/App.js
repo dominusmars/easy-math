@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 
 import CreateTasks from "./containers/CreateTest"
-
+import Navbar from "./containers/nav"
+import { Routes , MemoryRouter as Router} from 'react-router';
 
 
 window.data = {
@@ -39,9 +40,12 @@ window.data = {
 function App() {
   return (
     <div className="App">
+      <Router>
+        <CreateTasks />
+        <Navbar/>
 
-      <CreateTasks />
-    
+      </Router>
+      
     </div>
   );
 }
