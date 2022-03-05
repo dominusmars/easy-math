@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-
+import { useState } from 'react';
 import CreateTasks from "./containers/CreateTest"
+import User from './containers/User';
 import Navbar from "./containers/nav"
-import { Routes , MemoryRouter as Router} from 'react-router';
+import { MemoryRouter as Router} from 'react-router';
 
 
 window.data = {
@@ -31,18 +32,32 @@ window.data = {
       }
       ]
   }
-      
-
   ]
 }
 
 
 function App() {
+  const [Tests, setTests] = useState([]);
+  const [OpenCreateTest, setOpenCreateTest] = useState(false);
+  const [OpenHomePage, setOpenHomePage] = useState(false);
+
+  const gotoPage = (name)=>{
+    switch (name) {
+      case 'createTest':
+        setOpenCreateTest(!OpenCreateTest);
+        break;
+    
+      default:
+        break;
+    }
+  }
   return (
     <div className="App">
       <Router>
-        <CreateTasks />
-        <Navbar/>
+        <User/>
+        {OpenCreateTest && <CreateTasks Tests={Tests} setTests={setTests}/>}
+        {OpenHomePage}
+        <Navbar gotoPage={gotoPage}/>
 
       </Router>
       

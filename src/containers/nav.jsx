@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 
 
 
-function Navbar() {
+function Navbar({gotoPage}) {
 
 
   return (
@@ -25,9 +25,12 @@ function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" extract to="/">
+                <button onClick={()=>{
+                    gotoPage("createTest")
+                }}>
                   MakeTest
-                </NavLink>
+                </button>
+                
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" extract to="/">

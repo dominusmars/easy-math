@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react"
 
-function CreateTest({ createTest }) {
+function CreateTest({ Tests, setTests }) {
     const [Test, setTest] = useState([])
 
     const deleteQuestion = (index) => {
@@ -30,10 +30,12 @@ function CreateTest({ createTest }) {
         var test = {};
         test.testName = name
         test.test = Test
-        window.data.tests.push(test)
-        console.log(window.data)
+        var ntests = [...Tests]
+        ntests.push(test)
+        setTests(ntests)
         setTest([])
     }
+
     return (
         <div>
             <form onSubmit={(e) => {
